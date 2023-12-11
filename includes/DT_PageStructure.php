@@ -53,7 +53,7 @@ class DTPageStructure {
 		// escape out parser functions
 		$page_contents = preg_replace( '/{{(#.+)}}/', '&#123;&#123;$1&#125;&#125;', $page_contents );
 		// escape out transclusions, and calls like "DEFAULTSORT"
-		$page_contents = preg_replace( '/{{(.*:.+)}}/', '&#123;&#123;$1&#125;&#125;', $page_contents );
+		$page_contents = preg_replace( '/{{([^|]*:.+)}}/', '&#123;&#123;$1&#125;&#125;', $page_contents );
 		// escape out variable names
 		$page_contents = str_replace( '{{{', '&#123;&#123;&#123;', $page_contents );
 		$page_contents = str_replace( '}}}', '&#125;&#125;&#125;', $page_contents );
